@@ -38,6 +38,10 @@ node index.js
 - pageId: api 문서 url에서 `pages/` 뒤에 있는 숫자
 - filename: `.types.ts` 앞에 들어갈 파일 이름
 
+### 6. 에러가 발생할 경우
+
+- .env에 설정한 값들을 index.js에 직접 입력한 다음 다시 실행해봅니다.
+
 ---
 
 ## 투두
