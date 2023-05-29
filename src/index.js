@@ -63,6 +63,7 @@ const apiTypeMappings = {
   boolean: 'boolean',
   date: 'APIDate',
   datetime: 'APIDateTime',
+  localdatetime: 'APIDateTime',
   enum: 'APICode<string>',
   price: 'APIMoney',
   ['array<enum>']: 'APICode<string>[]',
@@ -103,7 +104,7 @@ function getTypeName(type) {
     nullable = true;
   }
 
-  const typeName = apiTypeMappings[type] || 'any';
+  const typeName = apiTypeMappings[type] ?? 'any';
 
   if (nullable) {
     return `${typeName} | null`;
@@ -329,8 +330,6 @@ async function run() {
   const filename = await getFilenameFromUser();
   const content = await getPageContent(pageId);
   const interfaceCodes = generateInterfaceCode(content);
-
-  console.log('interfaceCodes', interfaceCodes);
 
   const fileFullName = `${filename}.types.ts`;
   saveInterfaceCode(interfaceCodes, fileFullName);
