@@ -1,0 +1,32 @@
+# api 캐싱 디렉토리
+contents/
+
+# 생성된 types 파일이 들어갈 디렉토리
+types/
+
+# 로컬
+disposable/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Compiled binary addons (https://nodejs.org/api/addons.html)
+build/Release
+
+# Dependency directories
+node_modules/
+
+# Optional REPL history
+.node_repl_history
+
+# Output of 'npm pack'
+*.tgz
+
+# dotenv environment variable files
+.env
+.env.development.local
+.env.test.local
+.env.production.local
+.env.local
