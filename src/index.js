@@ -287,7 +287,7 @@ function generateInterfaceCode(content) {
         typeName = getTypeName(typeName);
 
         const isRequired =
-          interfaceType === 'Request' ? required === 'Y' : true;
+          interfaceType === 'Payload' ? required === 'Y' : true;
 
         return `/** ${description} */
 	${parameter}${isRequired ? '' : '?'}: ${typeName};`;
