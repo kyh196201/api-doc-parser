@@ -47,9 +47,13 @@ function getFilenameFromUser() {
 
 // #region constants
 // Confluence API 엔드포인트와 필요한 인증 정보 설정
-const API_TOKEN = process.env.API_TOKEN;
-const BASE_URL = process.env.API_DOMAIN;
-const USER_EMAIL = process.env.USER_EMAIL;
+// const API_TOKEN = process.env.API_TOKEN;
+const API_TOKEN =
+  'ATATT3xFfGF0AwF04n2fBnsmpsHh5XCR2TS_ycqsXPPqcXA_zgQLYElRif7xs3q8WzfMK9Wr7sp_xeggr7DrbXFamiM6gEcBNMEakuRO9ZdJrVjO9sPW0IODxIXyQbLSnM641hH2OSOPJ060m1jfrgbcu0ufyc0K18QRWNVTicG-sRfkvrZhPco=F926A4F0';
+// const BASE_URL = process.env.API_DOMAIN;
+const BASE_URL = 'https://forbizkorea.atlassian.net/wiki/rest/api';
+// const USER_EMAIL = process.env.USER_EMAIL;
+const USER_EMAIL = 'ksw1222@forbiz.co.kr';
 
 const bracketRegex = /^[a-zA-Z]+\[\]$/;
 
@@ -57,7 +61,7 @@ const bracketRegex = /^[a-zA-Z]+\[\]$/;
 const apiTypeMappings = {
   any: 'any',
   string: 'string',
-  html: 'string',
+  html: 'HTMLContent',
   number: 'number',
   float: 'number',
   boolean: 'boolean',
@@ -66,6 +70,8 @@ const apiTypeMappings = {
   localdatetime: 'APIDateTime',
   enum: 'APICode<string>',
   price: 'APIMoney',
+  pk: 'APIPk',
+  'pk encrypt': 'APIEncrypt',
   ['array<enum>']: 'APICode<string>[]',
 };
 
